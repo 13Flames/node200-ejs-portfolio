@@ -1,0 +1,26 @@
+<%- include('partials/header', { title: 'Home' }) %>
+
+<section class="hero">
+  <%- include('partials/code-open', { name: 'whoAmI', param: 'info', label: 'Who am I', level: 1 }) %>
+    <p class="name"><%= site.name %></p>
+    <p class="role"><%= site.role %></p>
+    <p class="tagline"><%= site.tagline %></p>
+    <p class="cta">
+      <a class="button primary" href="/portfolio">See my work</a>
+      <a class="button" href="/contact">Get in touch</a>
+      <a class="button" href="<%= site.github %>">GitHub ↗</a>
+    </p>
+  <%- include('partials/code-close') %>
+</section>
+
+<section>
+  <%- include('partials/code-open', { name: 'highlights', param: 'work', label: 'Highlights', level: 2 }) %>
+    <% if (featured) { %><%- include('partials/project-card', { project: featured }) %><% } %>
+    <div class="grid">
+      <% highlights.forEach((project) => { %><%- include('partials/project-card', { project }) %><% }) %>
+    </div>
+    <p><a class="more" href="/portfolio">See all <%= total %> projects →</a></p>
+  <%- include('partials/code-close') %>
+</section>
+
+<%- include('partials/footer') %>

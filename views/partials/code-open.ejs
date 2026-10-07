@@ -1,0 +1,12 @@
+<%#
+  Opens a section styled as a function that returns its content:
+    function name(param) {
+      return (
+  Pass: name, param, label (what screen readers hear), level (1 or 2).
+  Close it with partials/code-close.
+-%>
+<h<%= level %> class="code-heading" aria-label="<%= label %>">
+  <span class="code-line" aria-hidden="true"><span class="kw">function</span> <span class="fn"><%= name %></span><span class="punc">(</span><span class="param"><%= param %></span><span class="punc">) {</span></span>
+  <span class="code-line indent" aria-hidden="true"><span class="kw">return</span> <span class="punc">(</span></span>
+</h<%= level %>>
+<div class="code-body">

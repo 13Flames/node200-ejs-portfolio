@@ -1,0 +1,13 @@
+<%# One project card. Pass: project -%>
+<article class="card<%= project.featured ? ' featured' : '' %>">
+  <% if (project.featured) { %><p class="featured-label">Featured project</p><% } %>
+  <h3><%= project.title %></h3>
+  <p class="desc"><%= project.description %></p>
+  <ul class="tags">
+    <% project.tags.forEach((tag) => { %><li><%= tag %></li><% }) %>
+  </ul>
+  <p class="card-links">
+    <% if (project.link) { %><a href="<%= project.link %>"><%= project.featured ? 'Play it' : 'Live' %> ↗</a><% } %>
+    <% if (project.repo) { %><a href="<%= project.repo %>">Code ↗</a><% } %>
+  </p>
+</article>

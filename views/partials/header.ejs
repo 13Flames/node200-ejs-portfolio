@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %> · <%= site.name %></title>
+    <meta name="description" content="<%= site.name %> - <%= site.tagline %>" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo" aria-label="mccoding - home">
+        <span class="logo-mark" aria-hidden="true"><span class="punc">{</span><span class="fn">mc</span><span class="punc">}</span></span>
+        <span aria-hidden="true">coding</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="/" <%- page === 'home' ? 'aria-current="page"' : '' %>>Home</a>
+        <a href="/portfolio" <%- page === 'portfolio' ? 'aria-current="page"' : '' %>>Portfolio</a>
+        <a href="/contact" <%- page === 'contact' || page === 'thanks' ? 'aria-current="page"' : '' %>>Contact</a>
+      </nav>
+    </header>
+    <main>

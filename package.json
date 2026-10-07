@@ -1,0 +1,27 @@
+{
+  "name": "node200-ejs-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio with a contact form that saves to Google Sheets - Express + EJS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "test": "mocha --exit"
+  },
+  "author": "Matthew Colvig",
+  "license": "ISC",
+  "dependencies": {
+    "@googleapis/sheets": "^18.1.1",
+    "ejs": "^7.0.1",
+    "express": "^5.2.1",
+    "morgan": "^1.12.1"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^12.0.3",
+    "supertest": "^7.3.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

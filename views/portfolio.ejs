@@ -1,0 +1,14 @@
+<%- include('partials/header', { title: 'Portfolio' }) %>
+
+<section>
+  <%- include('partials/code-open', { name: 'myProjects', param: 'work', label: 'Portfolio', level: 1 }) %>
+    <p class="lead">Everything I've built so far, most complete first. Live links open the running app; code links go to GitHub.</p>
+    <% const featuredProject = projects.find((p) => p.featured) %>
+    <% if (featuredProject) { %><%- include('partials/project-card', { project: featuredProject }) %><% } %>
+    <div class="grid">
+      <% projects.filter((p) => !p.featured).forEach((project) => { %><%- include('partials/project-card', { project }) %><% }) %>
+    </div>
+  <%- include('partials/code-close') %>
+</section>
+
+<%- include('partials/footer') %>

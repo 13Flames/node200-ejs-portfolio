@@ -1,0 +1,37 @@
+<%- include('partials/header', { title: 'Contact' }) %>
+
+<section>
+  <%- include('partials/code-open', { name: 'contactMe', param: 'you', label: 'Contact me', level: 1 }) %>
+    <p class="lead">Have a role, a project or a question? Leave your details and I'll get back to you.</p>
+
+    <% if (formError) { %>
+      <p class="form-error" role="alert"><%= formError %></p>
+    <% } %>
+
+    <form class="contact-form" action="/thanks" method="POST" novalidate>
+      <% [
+        { id: 'firstName', label: 'First name', type: 'text', autocomplete: 'given-name' },
+        { id: 'lastName', label: 'Last name', type: 'text', autocomplete: 'family-name' },
+        { id: 'email', label: 'Email', type: 'email', autocomplete: 'email' },
+      ].forEach((field) => { %>
+        <div class="field<%= errors[field.id] ? ' has-error' : '' %>">
+          <label for="<%= field.id %>"><%= field.label %></label>
+          <input
+            id="<%= field.id %>"
+            name="<%= field.id %>"
+            type="<%= field.type %>"
+            autocomplete="<%= field.autocomplete %>"
+            value="<%= contact[field.id] || '' %>"
+            maxlength="100"
+            required
+            <% if (errors[field.id]) { %>aria-invalid="true" aria-describedby="<%= field.id %>-error"<% } %>
+          />
+          <% if (errors[field.id]) { %><p class="field-error" id="<%= field.id %>-error"><%= errors[field.id] %></p><% } %>
+        </div>
+      <% }) %>
+      <button class="button primary" type="submit">Send</button>
+    </form>
+  <%- include('partials/code-close') %>
+</section>
+
+<%- include('partials/footer') %>
