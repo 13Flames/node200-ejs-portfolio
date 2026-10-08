@@ -7,7 +7,7 @@ module.exports = {
     role: 'Software Developer',
     tagline: 'Air Force veteran building full-stack web apps — and games. Open to software roles.',
     location: 'Albuquerque, NM',
-    email: 'matthew.colvig@mccoding.dev',
+    email: 'matthew@mccoding.dev',
     github: 'https://github.com/13Flames',
     linkedin: 'https://www.linkedin.com/in/matthew-colvig/',
     website: 'https://mccoding.dev'
